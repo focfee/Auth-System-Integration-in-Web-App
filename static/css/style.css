@@ -1,0 +1,664 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'RF';
+}
+body {
+    background: linear-gradient(to top, #D9CDF3, #FFFFFF) fixed;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #65558F, #8472af);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.main-set {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.account_settings {
+    width: 100%;
+    max-width: 600px;
+    background-color: #F5EFF7;
+    border-radius: 21px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.7s ease-out forwards;
+}
+.account_settings h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form_change {
+    margin-bottom: 20px;
+    position: relative;
+}
+input {
+    border: 2px dashed #D0BCFE;
+    outline: none;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 21px;
+    background-color: white;
+    transition: 0.3s;
+    box-sizing: border-box;
+    font-family: 'RF';
+}
+input:hover {
+    border: 2px solid #a896d3;
+}
+.purple-cube1 {
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    border: none;
+    right: 300px;
+    border-radius: 21px;
+    background-color: #65558F;
+    color: white;
+    font-family: 'RF';
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+.purple-cube1:hover {
+    background-color: #7a6b9a;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.button1 {
+    flex: 1;
+    min-width: 150px;
+    height: 50px;
+    background-color: #D0BCFE;
+    border: none;
+    border-radius: 18px;
+    font-family: 'RF';
+    cursor: pointer;
+    transition: 0.3s;
+}
+.delete {
+    flex: 1;
+    min-width: 150px;
+    height: 50px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-family: 'RF';
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button1:hover, button:hover,.account_button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+.delete:hover {
+    background-color: #ff5252;
+    transform: scale(1.05);
+}
+.h1t {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    font-family: 'RF';
+    font-size: 4vw;
+    animation: fadeIn 0.7s ease-out forwards;
+}
+.toilet {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shit:before, .shit:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(112, 51, 255, 0.952);
+    filter: blur(20px);
+    width: 40vw;
+    margin: -20vw 0 0 0;
+    aspect-ratio: 1;
+    translate: -50% 0;
+    border-top-left-radius: 60% 80%;
+    border-top-right-radius: 50% 80%;
+    border-bottom-left-radius: 60% 80%;
+    border-bottom-right-radius: 50% 80%;
+    mix-blend-mode: multiply;
+    background-blend-mode: color;
+    animation: rot 20s ease-out infinite;
+}
+.shit:after {
+    width: 30vw;
+    margin: -15vw 0 0 0;
+    animation-delay: -4s;
+    animation-duration: 10s;
+    background-color: #00ff4c38;
+    filter: blur(20px);
+}
+@keyframes rot {
+    0% {
+        scale: 1;
+    }
+    50% {
+        rotate: 180deg;
+        scale: 1.5;
+    }
+    100% {
+        rotate: 360deg;
+        scale: 1;
+    }
+}
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000007;
+    backdrop-filter: blur(120px);
+}
+html, body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'RF';
+    position: relative;
+}
+main {
+    flex: 1; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+}
+.login-main {
+    width: 691px;
+    height: 491px;
+    background-color: #F5EFF7;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    padding: 40px;
+    border-radius: 21px;
+    animation: fadeIn2 0.5s ease-out forwards;
+}
+input {
+    border: 2px dashed #D0BCFE;
+    outline: none;
+    font-family: 'RF';
+    width: 100%;
+    height: 63px;
+    font-size: 20px;
+    margin-top: 15px;
+    border-radius: 21px;
+    position: relative;
+    padding: 8px 20px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    position: absolute;
+    top: -8px;
+    left: -7px;
+    display: block;
+    transform: scale(.8);
+    color: black;
+}
+label {
+    position: absolute;
+    transition: .3s;
+    left: 25px;
+    font-size: 20px;
+    color: gray;
+    top: 35px;
+    pointer-events: none;
+}
+.q {
+    position: relative;
+    margin-bottom: 20px;
+}
+.purple-cubereg{
+    width: 218px;
+    height: 88px;
+    border: none;
+    border-radius: 21px;
+    background-color: #65558F;
+    margin-right: 40px;
+}
+
+.purple-cubereg:hover{
+    transform: (100%);
+    background-color: #65558F;
+}
+.ftitle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 88px;
+}
+.ftitle h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+button {
+    font-size: 20px;
+    font-family: 'RF';
+    color: rgb(0, 0, 0);
+    width: 305px;
+    height: 50px;
+    border-radius: 18px;
+    border: none;
+    outline: none;
+    background-color: #D0BCFE;
+    cursor: pointer;
+    transition: 0.3s;
+}
+input:hover{
+    border: 2px solid #a896d3;
+}
+button.link:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+.textl {
+    font-size: 14px;
+    text-align: center;
+    color: black;
+}
+.limg {
+    margin-left: -21px;
+    height: 571px;
+    border-radius: 0 21px 21px 0;
+    z-index: -1;
+    animation: fadeIn2 0.5s ease-out forwards;
+}
+.error {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    color: red;
+}
+.admin-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.admin-message {
+    color: #79e92e;
+    font-size: 50px;
+    animation: pulse 0.9s infinite;
+    white-space: nowrap;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.admin-container {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+.admin-header {
+    background: linear-gradient(90deg, #65558F, #8472af);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 21px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.7s ease-out forwards;
+}
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+.user-card {
+    background: #F5EFF7;
+    border-radius: 21px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.user-info {
+    margin-bottom: 20px;
+}
+.user-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+.user-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+/* Бейджи статусов */
+.admin-badge {
+    background: #65558F;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+.user-badge {
+    background: #8472af;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+.user-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.purple-cube {
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    border: none;
+    right: 40px;
+    border-radius: 21px;
+    background-color: #65558F;
+    color: white;
+    font-family: 'RF';
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+.purple-cube:hover {
+    background-color: #7a6b9a;
+    transform: scale(1.05);
+}
+.no-users {
+    text-align: center;
+    padding: 50px;
+    background: #F5EFF7;
+    border-radius: 21px;
+    grid-column: 1 / -1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+}
+.content-background {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn2 {
+    from { opacity: 1; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.user-card {
+    animation: fadeIn 0.7s ease-out forwards;
+}
+.delete {
+    flex: 1;
+    min-width: 150px;
+    height: 50px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-family: 'RF';
+    cursor: pointer;
+    transition: 0.3s;
+}
+.delete:hover {
+    background-color: #ff5252;
+    transform: scale(1.05);
+}
+button {
+    font-size: 20px;
+    font-family: 'RF';
+    color: rgb(0, 0, 0);
+    width: 305px;
+    height: 50px;
+    border-radius: 18px;
+    border: none;
+    outline: none;
+    background-color: #D0BCFE;
+    cursor: pointer;
+    transition: 0.3s;
+}
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .container,
+  .login-main,
+  .admin-container,
+  .account_settings {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+  .purple-cube,
+  .purple-cube1 {
+    position: static;
+    margin: 10px 0;
+  }
+
+  header.mainhed {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .button1,
+  .delete,
+  .button-container button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .form_change input,
+  .q input {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .ftitle {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ftitle h2 {
+    font-size: 22px;
+    position: static;
+    transform: none;
+  }
+
+  .limg {
+    display: none;
+  }
+
+  /* Account page */
+  .account_settings header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .button-container button {
+    width: 100%;
+  }
+
+  /* Admin page */
+  .admin-container {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .admin-message {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .admin-message h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .user-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .user-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Общее */
+  .textl {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .login-main h1,
+  .login-main label,
+  .login-main input,
+  .login-main button {
+    font-size: 16px;
+  }
+
+  .purple-cubereg {
+    margin-right: 300px;
+}
+}
+
+@media (max-width: 430px) {
+
+  .button1,
+  .delete,
+  .button-container button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+  .form_change input,
+  .q input {
+    font-size: 14px;
+  }
+
+  .ftitle h2 {
+    font-size: 20px;
+  }
+
+  .admin-message h2 {
+    font-size: 16px;
+  }
+
+  .textl {
+    font-size: 12px;
+  }
+
+  .container h1 {
+    font-size: 18px;
+  }
+
+  .user-meta span {
+    font-size: 12px;
+  }
+}

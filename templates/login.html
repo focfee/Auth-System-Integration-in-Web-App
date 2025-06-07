@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        @font-face {
+            font-family: 'RF';
+            src: url('static/fonts/RF.Otf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="login-main">
+            <div>
+                <div class="ftitle" style="margin-bottom: 25px;">
+                    <button class="purple-cubereg" onclick="window.location.href='/main'" title="???"></button>
+                    <h2>Вход</h2>
+                </div>
+                <p class="error"> {{error}} </p>
+                <form id="login-form" action="/login" method="post">
+                <div class="q">
+                    <input id="login" maxlength="10" type="text" name="login" placeholder="" required>
+                    <label>Логин</label>
+                </div>
+                <div class="q">
+                    <input id="password" maxlength="25" placeholder="" type="password" name="password" required>
+                    <label>Пароль</label>
+                </div>
+            </div>
+            <div>
+                <div class="ftitle" style="justify-content: center;">
+                    <button onclick="document.getElementById('login-form').submit()" type="submit" title="Войти в аккаунт">Вход</button>
+                    <button onclick="window.location.href='/register'" title="Зарегистрировать новый аккаунт">Зарегистрироваться</button>
+                </div>
+                <div class="textl">Нет аккаунта, тогда зарегистрируйся ↗</div>
+                </form>
+            </div>
+        </div>
+        <img class="limg" src="/static/img/WhiteLog.png" alt="Фоновое изображение">
+    </main>
+</body>
+</html>

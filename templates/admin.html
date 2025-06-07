@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        @font-face {
+            font-family: 'RF';
+            src: url('static/fonts/RF.Otf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1 onclick="window.location.href='/main'" style="cursor: pointer;">На главную</h1>
+    {% if admin == True %}
+    <div class="admin-center">
+        <div class="admin-message">Поздравляю, ты админ</div>
+    </div>
+    {% endif %}
+    <button class="purple-cube" onclick="window.location.href='/account'">{{ username }} 🧑‍💻</button>
+</header>
+    
+    <div class="content-background">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2 style="margin: 0; font-size: 1.8rem;">Управление пользователями</h2>
+                <div style="font-size: 1.2rem;">Всего пользователей: {{ users|length }}</div>
+            </div>
+            
+            <div class="users-grid">
+                {% for user in users %}
+                    {% if user.username != current_user %}
+                    <div class="user-card">
+                        <div class="user-info">
+                            <div class="user-name">{{ user.username }}</div>
+                            <div class="user-meta">
+                                <span>ID: {{ user.id }}</span>
+                                <span>
+                                    {% if user.admin %}
+                                        <span class="admin-badge">Админ</span>
+                                    {% else %}
+                                        <span class="user-badge">Пользователь</span>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class="user-meta">
+                                <span>Зарегистрирован: {{ user.registration_date.strftime('%d.%m.%Y %H:%M') }}</span>
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <button class="delete" onclick="confirmDelete({{ user.id }}, '{{ user.username }}')">
+                                Удалить
+                            </button>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% else %}
+                    <div class="no-users">
+                        <p>Нет других пользователей в системе</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function confirmDelete(userId, username) {
+            if(confirm(`Вы уверены, что хотите удалить пользователя "${username}"?`)) {
+                fetch(`/admin/delete_user/${userId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
+                .then(response => {
+                    if(response.ok) {
+                        alert('Пользователь успешно удален');
+                        location.reload();
+                    } else {
+                        alert('Ошибка при удалении пользователя');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Произошла ошибка');
+                });
+            }
+        }
+    </script>
+</body>
+</html>

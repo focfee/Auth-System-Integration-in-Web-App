@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основный Сайт</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        @font-face {
+            font-family: 'RF';
+            src: url('static/fonts/RF.Otf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body onload="main()" style="			overflow: hidden;">
+    <div class="toilet"><div class="shit"></div></div>
+    <header class="mainhed">
+                {% if admin == True %}
+    <div>
+        <button class="purple-cube1" style="top: 40px;" onclick="window.location.href='/admin'" title="Админка"> Админ панель 👀</button>
+    </div>
+    {% endif %}
+    <button class="purple-cube" style="top: 40px;" onclick="window.location.href='/account'" title="Настройки аккаунта">{{ username }} 🧑‍💻</button>
+    </header>
+    <div class="container">
+        <h1 class="h1t" onclick="window.location.href='https://site.nadmus.ru/'">Скоро здесь будет сайт</h1>
+    </div>
+</body>
+</html>

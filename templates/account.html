@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки аккаунта</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        @font-face {
+            font-family: 'RF';
+            src: url('static/fonts/RF.Otf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1 onclick="window.location.href='/main'" style="cursor: pointer;">На главную</h1>
+    {% if admin == True %}
+    <div>
+        <button class="purple-cube1" style="top: 40px;" onclick="window.location.href='/admin'" title="Админка"> Админ панель 👀</button>
+    </div>
+    {% endif %}
+    <button class="purple-cube" onclick="window.location.href='/account'">{{ username }} 🧑‍💻</button>
+</header>
+    <div class="main-set">
+        <div class="account_settings">
+            <h2>Настройки аккаунта</h2>
+            <form id="settings-form" action="/account" method="post">
+                <div class="form_change">
+                    <input type="text" id="login" name="login" placeholder="Изменить текущий логин" maxlength="10">
+                </div>
+                
+                <div class="form_change">
+                    <input type="password" id="password" name="password" placeholder="Изменить текущий пароль" maxlength="60">
+                </div>
+                
+                <div class="buttons-container">
+                    <button class="button1" type="submit" title="Сохранить изменения">Сохранить</button>
+                    <button class="button1" type="button" onclick="window.location.href='/logout'">Выйти</button>
+                    <button class="delete" type="button" onclick="window.location.href='/delete_account'">Удалить аккаунт</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
