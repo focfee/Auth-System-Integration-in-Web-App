@@ -8,7 +8,13 @@ import logging
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+dotenv_path = '.env'
+
+if not os.path.exists(dotenv_path):
+    print("Ошибка не найден файл .env! Для корректной работы проекта создайте .env на основе .env.example и заполните все нужные параметры.")
+    exit(1)
+
+load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'default-secret-key')
@@ -62,8 +68,8 @@ def admin_required(f):
     return decorated_function
 
 def create_default_users():
-    admin_username = os.getenv('ADMIN_USERNAME', 'admin')
-    admin_password = os.getenv('ADMIN_PASSWORD', 'admin')
+    admin_username = os.getenv('ADMIN_USERNAME')
+    admin_password = os.getenv('ADMIN_PASSWORD')
     admin_is_admin = os.getenv('ADMIN_IS_ADMIN', 'true').lower() == 'true'
     
     admin = User.query.filter_by(username=admin_username).first()
@@ -73,8 +79,8 @@ def create_default_users():
         db.session.add(admin_user)
         logger.info(f"Создан администратор: {admin_username}")
     
-    student_username = os.getenv('STUDENT_USERNAME', 'student')
-    student_password = os.getenv('STUDENT_PASSWORD', 'student')
+    student_username = os.getenv('STUDENT_USERNAME')
+    student_password = os.getenv('STUDENT_PASSWORD')
     student_is_admin = os.getenv('STUDENT_IS_ADMIN', 'false').lower() == 'true'
     
     student = User.query.filter_by(username=student_username).first()
