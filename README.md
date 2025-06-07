@@ -158,3 +158,4 @@ pip install -U -r requirements.txt
 python app.py
 ```
 
+Гудков Никита ИСП-308
